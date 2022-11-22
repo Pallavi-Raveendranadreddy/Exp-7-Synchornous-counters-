@@ -46,43 +46,70 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
+1.Create module projectname(input ,output) to start the verilog programming.
+2.create a if loop condition to increase the count in counter_up function.
+3.Similarly, create another loop for the down counter.
+4.End the verilog program using keyword endmodule.
+5.Get the timing diagram and RTL realization diagram for respective Counters.
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: VALASAREDDY PALLAVI
+RegisterNumber:  212221240059
 
 
+UP COUNTER
+module upcounter(clock,reset,up);
+input clock,reset;
+output reg[0:2] up;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+up=3'b 000;
+else
+up=up+1;
+end
+endmodule
 
+DOWN COUNTER
+module DOWN(clock,reset,down);
+input clock,reset;
+output reg[2:0] down;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+down=3'b 111;
+else
+down=down-1;
+end
+endmodule
+```
 
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e1.png)
 
 
-
-
-
-
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e2.png)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e3.png)
 
-
-
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e4.png)
 
 ### TRUTH TABLE 
 
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e5.png)
 
-
-
+![image](https://github.com/Nagadurg/Exp-7-Synchornous-counters-/blob/main/e6.png)
 
 
 ### RESULTS 
+Thus 4 bit up and down counters is implemented and its functionality is validated.
+
